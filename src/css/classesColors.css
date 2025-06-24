@@ -1,0 +1,39 @@
+.text-primary-color {
+    color: var(--primary-color);
+}
+
+.text-secondary-color {
+    color: var(--secondary-color);
+}
+
+.text-secondary-color-light {
+    color: var(--secondary-color-light);
+}
+
+.text-third-color {
+    color: var(--third-color);
+}
+
+.text-background-card {
+    color: var(--background-card);
+}
+
+.bg-primary-color {
+    background-color: var(--primary-color);
+}
+
+.bg-secondary-color {
+    background-color: var(--secondary-color);
+}
+
+.bg-secondary-color-light {
+    background-color: var(--secondary-color-light);
+}
+
+.bg-third-color {
+    background-color: var(--third-color);
+}
+
+.bg-background-card {
+    background-color: var(--background-card);
+}

@@ -1,1 +1,78 @@
 /* app global css */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.body--light {
+    --primary-color: #00507d;
+    --secondary-color: #000000;
+    --third-color: #ffffff;
+
+    --secondary-color-light: #121212;
+
+    --background-card: #ffffff;
+}
+
+.body--dark {
+    --primary-color: #4f5157;
+    --secondary-color: #ffffff;
+    --third-color: #ffffff;
+
+    --secondary-color-light: #d9d9d9;
+
+    --background-card: #1d1d1d;
+}
+
+body.body--dark {
+    background: #1d1d1d;
+}
+
+.body--black-yellow {
+    --primary-color: #000000;
+    --secondary-color: #ffff00;
+    --third-color: #ffff00;
+    --secondary-color-light: #f5f592;
+
+    --background-card: #121212;
+    background: #121212;
+}
+
+.body--light,
+.body--dark,
+.body--black-yellow {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.body--pixel-art {
+    font-family: 'Press Start 2P', sans-serif;
+
+    --background-card: #ffffff;
+}
+
+.option-light {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.option-dark {
+    background-color: #1d1d1d;
+    color: #ffffff;
+}
+
+.option-black-yellow {
+    background-color: #000000;
+    color: #ffff00;
+    font-weight: bold;
+}
+
+.option-light,
+.option-dark,
+.option-black-yellow {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.option-pixel-art {
+    font-family: 'Press Start 2P', sans-serif !important;
+}
