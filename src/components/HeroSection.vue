@@ -1,5 +1,9 @@
 <script setup>
 import logo from 'src/assets/backgrounds/logo_holograma.png'
+import logoYellow from 'src/assets/backgrounds/logo_holograma_yellow.png'
+import { useThemeStore } from 'src/stores/themeStore'
+
+const useTheme = useThemeStore()
 </script>
 
 <template>
@@ -36,7 +40,10 @@ import logo from 'src/assets/backgrounds/logo_holograma.png'
     </q-card>
 
     <q-card class="col-6 bg-background-card gt-sm" flat>
-      <q-img :src="logo" style="object-fit: cover" />
+      <q-img
+        :src="useTheme.theme === 'black-yellow' ? logoYellow : logo"
+        style="object-fit: cover"
+      />
     </q-card>
   </div>
 </template>
