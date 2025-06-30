@@ -1,9 +1,23 @@
 <script setup>
 import logo from 'src/assets/backgrounds/logo_holograma.png'
 import logoYellow from 'src/assets/backgrounds/logo_holograma_yellow.png'
+import logoPixel from 'src/assets/backgrounds/logo_holograma_pixel.png'
+import logoGray from 'src/assets/backgrounds/logo_holograma_gray.png'
 import { useThemeStore } from 'src/stores/themeStore'
+import { computed } from 'vue'
 
 const useTheme = useThemeStore()
+
+const logoImg = computed(() => {
+  if (useTheme.theme === 'black-yellow') {
+    return logoYellow
+  } else if (useTheme.theme === 'pixel-art') {
+    return logoPixel
+  } else if (useTheme.theme === 'dark') {
+    return logoGray
+  }
+  return logo
+})
 </script>
 
 <template>
@@ -11,7 +25,7 @@ const useTheme = useThemeStore()
     <q-card class="col-md-6 col-sm-12 flex items-center bg-background-card" flat>
       <div class="q-pa-md">
         <h1 class="text-secondary-color text-bold text-h3">Olá, me chamo Leonardo Silva</h1>
-        <h2 class="text-secondary-color-light text-weight-regular text-h5 q-my-md">
+        <h2 class="text-secondary-color-light text-weight-regular text-h6 q-my-md">
           Sou um desenvolvedor web e aqui você pode conhecer um pouco mais sobre mim e ver alguns
           dos meus projetos.
         </h2>
@@ -40,10 +54,8 @@ const useTheme = useThemeStore()
     </q-card>
 
     <q-card class="col-6 bg-background-card gt-sm" flat>
-      <q-img
-        :src="useTheme.theme === 'black-yellow' ? logoYellow : logo"
-        style="object-fit: cover"
-      />
+      <!-- :src="useTheme.theme === 'black-yellow' ? logoYellow : logo" -->
+      <q-img :src="logoImg" style="object-fit: cover" />
     </q-card>
   </div>
 </template>

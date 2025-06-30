@@ -48,8 +48,37 @@ body.body--dark {
 .body--pixel-art {
     font-family: 'Press Start 2P', sans-serif;
 
-    --background-card: #ffffff;
+    --primary-color: #7a5c3c;
+    --secondary-color: #ffffff;
+    --secondary-color-light: #ffffff;
+
+    --background-card: url('/src/assets/backgrounds/background_blue.webp');
+    background: url('/src/assets/backgrounds/background_blue.webp');
+
+    cursor: url('/src/assets/icons/pixel-art/cursors/cursor-pixel.png'), auto;
 }
+
+.body--pixel-art .bg-background-stars {
+    background: url('/src/assets/backgrounds/background_blue_stars.webp') no-repeat top center;
+    background-size: contain;
+}
+
+.body--pixel-art .bg-background-buildings {
+    background: url('/src/assets/backgrounds/background_blue_buildings.webp') no-repeat bottom center;
+    background-size: contain;
+}
+
+.body--pixel-art h3 {
+    font-size: 1.5rem;
+}
+
+.body--pixel-art p {
+    font-size: 1rem;
+}
+
+/* .body--pixel-art header>nav {
+    font-size: 1.2rem;
+} */
 
 .option-light {
     background-color: #ffffff;
@@ -75,4 +104,26 @@ body.body--dark {
 
 .option-pixel-art {
     font-family: 'Press Start 2P', sans-serif !important;
+}
+
+@media screen and (max-width: 600px) {
+    .body--pixel-art h1 {
+        font-size: 1.7rem;
+    }
+
+    .body--pixel-art h2 {
+        font-size: 1.2rem;
+    }
+
+    .body--pixel-art h3 {
+        font-size: 1.1rem;
+    }
+
+    .body--pixel-art p {
+        font-size: 0.8rem;
+    }
+
+    .body--pixel-art .bg-background-stars {
+        background-size: 100vh;
+    }
 }

@@ -5,12 +5,12 @@ import TheHeader from 'src/components/TheHeader.vue'
 
 <template>
   <q-layout view="lHh Lpr lff">
-    <TheHeader />
+    <TheHeader :show-links="false" />
 
     <q-page-container>
       <router-view />
     </q-page-container>
 
-    <TheFooter />
+    <TheFooter :show-contact="false" />
   </q-layout>
 </template>
