@@ -1,8 +1,5 @@
 <script setup>
-import CardProject from 'src/components/cards/CardProject.vue'
-import { useThemeStore } from 'src/stores/themeStore'
-
-const useTheme = useThemeStore()
+import CardProjectPixel from 'src/components/pixelArt/cards/CardProjectPixel.vue'
 </script>
 
 <template>
@@ -24,23 +21,25 @@ const useTheme = useThemeStore()
 
       <q-card-section class="q-pa-md q-gutter-md row justify-center">
         <div v-for="i in 4" :key="i">
-          <CardProject />
+          <CardProjectPixel />
         </div>
       </q-card-section>
 
       <q-card-section class="row justify-center">
         <q-btn
           no-caps
-          color="primary-color"
-          text-color="third-color"
           label="Mais Projetos"
-          icon="add"
-          :size="useTheme.theme === 'pixel-art' ? 'md' : 'lg'"
+          icon="explore"
+          size="md"
           style="width: 300px; max-width: 100%"
-          class="q-mt-md"
+          class="nes-btn is-primary"
           :to="{ name: 'projects' }"
         />
       </q-card-section>
     </q-card>
   </div>
 </template>
+
+<style scoped>
+@import '/node_modules/nes.css/css/nes.css';
+</style>

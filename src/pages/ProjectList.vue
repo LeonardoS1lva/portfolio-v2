@@ -1,5 +1,5 @@
 <script setup>
-import PixelButton2 from 'src/components/buttons/PixelButton2.vue'
+// import PixelButton2 from 'src/components/buttons/PixelButton2.vue'
 </script>
 
 <template>
@@ -17,7 +17,7 @@ import PixelButton2 from 'src/components/buttons/PixelButton2.vue'
         class="q-mt-md"
       />
     </q-card> -->
-    <PixelButton2 />
+    <!-- <PixelButton2 /> -->
   </q-page>
 </template>
 
