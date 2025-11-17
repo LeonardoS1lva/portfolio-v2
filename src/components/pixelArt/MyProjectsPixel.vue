@@ -1,5 +1,26 @@
 <script setup>
 import CardProjectPixel from 'src/components/pixelArt/cards/CardProjectPixel.vue'
+import plataformaCpid from 'src/assets/projects/plataforma_cpid.webp'
+import redeBeijaFlor from 'src/assets/projects/rede_beija_flor.webp'
+
+const projects = [
+  {
+    imgProject: plataformaCpid,
+    projectName: 'Plataforma CPID',
+    projectDescription: 'Descrição do Projeto 1.',
+    projectLink: 'https://example.com/project1',
+    labelButton: 'Ver Projeto',
+  },
+  {
+    imgProject: redeBeijaFlor,
+    projectName: 'Rede Beija Flor',
+    projectDescription: 'Descrição do Projeto 2.',
+    projectLink: 'https://example.com/project2',
+    labelButton: 'Ver Projeto',
+  },
+  {},
+  {},
+]
 </script>
 
 <template>
@@ -19,9 +40,19 @@ import CardProjectPixel from 'src/components/pixelArt/cards/CardProjectPixel.vue
         </div>
       </q-card-section>
 
-      <q-card-section class="q-pa-md q-gutter-md row justify-center">
-        <div v-for="i in 4" :key="i">
-          <CardProjectPixel />
+      <q-card-section class="q-pa-md row">
+        <div
+          v-for="project in projects"
+          :key="project.projectName"
+          class="flex flex-center col-md-3"
+        >
+          <CardProjectPixel
+            :imgProject="project.imgProject"
+            :projectName="project.projectName"
+            :projectDescription="project.projectDescription"
+            :projectLink="project.projectLink"
+            :labelButton="project.labelButton"
+          />
         </div>
       </q-card-section>
 
