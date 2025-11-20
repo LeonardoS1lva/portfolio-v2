@@ -27,16 +27,16 @@ defineProps({
 
 <template>
   <q-card
-    style="width: 400px; border-radius: 12px"
-    class="bg-background-card full-height row column"
+    style="width: 400px; border-radius: 12px; padding: 8px"
+    class="bg-background-card full-height row column nes-container is-rounded is-dark"
   >
     <q-card-section class="q-pa-none">
-      <q-img :src="imgProject" style="border-radius: 12px 12px 0 0" height="230px" fit="cover" />
+      <q-img :src="imgProject" style="border-radius: 12px 12px 0 0" height="220px" fit="cover" />
     </q-card-section>
 
-    <q-card-section class="">
+    <q-card-section>
       <div class="text-h6 text-secondary-color text-bold">{{ projectName }}</div>
-      <div class="text-subtitle2 text-secondary-color-light">{{ projectDescription }}</div>
+      <div class="text-subtitle2 text-secondary-color-light q-pt-md">{{ projectDescription }}</div>
     </q-card-section>
 
     <q-space />
