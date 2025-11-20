@@ -105,11 +105,12 @@ const submitForm = (event) => {
                 text-color="third-color"
                 label="Enviar Mensagem"
                 type="submit"
+                :class="$q.screen.lt.md ? 'full-width' : ''"
               />
             </q-form>
           </div>
 
-          <div class="col-md-6 col-12">
+          <div class="col-md-6 col-12" :class="$q.screen.lt.md ? 'row justify-between' : ''">
             <div>
               <h6 class="text-h6 text-bold text-secondary-color">Contato Direto</h6>
               <div class="text-subtitle2 q-pt-sm text-secondary-color-light">
@@ -119,7 +120,7 @@ const submitForm = (event) => {
             </div>
             <div>
               <h6 class="text-h6 text-bold text-secondary-color">Redes Sociais</h6>
-              <div>
+              <div :class="$q.screen.lt.md ? 'row justify-center' : ''">
                 <q-btn
                   no-caps
                   flat
