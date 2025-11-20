@@ -123,6 +123,7 @@ const getStatus = computed(() => {
         :href="linkCode"
         target="_blank"
         rel="noopener noreferrer"
+        class="text-weight-medium"
         v-if="hasLinkCode"
       />
       <q-btn
@@ -134,6 +135,7 @@ const getStatus = computed(() => {
         :href="linkProject"
         target="_blank"
         rel="noopener noreferrer"
+        class="text-weight-medium"
         v-if="hasLinkProject"
       />
     </q-card-actions>
