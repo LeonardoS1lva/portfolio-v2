@@ -6,15 +6,17 @@ import logoPixel from 'src/assets/backgrounds/logo_holograma_pixel.png'
   <div class="row">
     <q-card class="col-md-6 col-sm-12 flex items-center bg-background-card" flat>
       <div class="q-pa-md">
-        <h1 class="text-secondary-color text-bold text-h3">Olá, me chamo Leonardo Silva</h1>
-        <h2 class="text-secondary-color-light text-weight-regular text-h6 q-my-md">
+        <h1 class="text-secondary-color text-bold text-h3" style="line-height: 1.2">
+          Olá, me chamo Leonardo Silva
+        </h1>
+        <h2 class="text-secondary-color-light text-weight-regular text-h6 q-py-md">
           Sou um desenvolvedor web e aqui você pode conhecer um pouco mais sobre mim e ver alguns
           dos meus projetos.
         </h2>
         <div>
           <span>
             <q-btn class="nes-btn" href="https://github.com/LeonardoS1lva" target="_blank" no-caps>
-              <i class="nes-icon github is-medium"></i>
+              <i class="nes-icon github" :class="$q.screen.gt.sm ? 'is-medium' : 'is-small'"></i>
               <span class="q-ml-md nes-text text-grey-9">Github</span>
             </q-btn>
           </span>
@@ -25,7 +27,7 @@ import logoPixel from 'src/assets/backgrounds/logo_holograma_pixel.png'
               target="_blank"
               no-caps
             >
-              <i class="nes-icon linkedin is-medium"></i>
+              <i class="nes-icon linkedin" :class="$q.screen.gt.sm ? 'is-medium' : 'is-small'"></i>
               <span class="q-ml-md nes-text">LinkedIn</span>
             </q-btn>
           </span>
