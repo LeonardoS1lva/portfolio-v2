@@ -32,10 +32,6 @@ const useTheme = useThemeStore()
         <q-separator class="q-my-md q-py-xs bg-primary-color" />
 
         <ContactMe id="contact" />
-
-        <q-page-scroller position="bottom-right" :offset="[18, 18]">
-          <q-btn fab icon="keyboard_arrow_up" color="primary-color" text-color="third-color" />
-        </q-page-scroller>
       </div>
       <div class="col-11" v-else>
         <HeroSectionPixel id="home" />
@@ -53,6 +49,10 @@ const useTheme = useThemeStore()
         <ContactMePixel id="contact" />
       </div>
       <q-space />
+
+      <q-page-scroller position="bottom-right" :offset="[18, 18]">
+        <q-btn fab icon="keyboard_arrow_up" color="primary-color" text-color="third-color" />
+      </q-page-scroller>
     </div>
   </q-page>
 </template>
