@@ -29,10 +29,34 @@ defineProps({
           <div class="q-col-gutter-y-sm">
             <h5 class="text-bold">Links Rápidos</h5>
             <nav class="row column">
-              <q-btn flat class="text-third-color" to="#home" label="Início" align="left" />
-              <q-btn flat class="text-third-color" to="#projects" label="Projetos" align="left" />
-              <q-btn flat class="text-third-color" to="#skills" label="Habilidades" align="left" />
-              <q-btn flat class="text-third-color" to="#contact" label="Contato" align="left" />
+              <q-btn
+                flat
+                class="text-third-color q-pl-none"
+                to="#home"
+                label="Início"
+                align="left"
+              />
+              <q-btn
+                flat
+                class="text-third-color q-pl-none"
+                to="#projects"
+                label="Projetos"
+                align="left"
+              />
+              <q-btn
+                flat
+                class="text-third-color q-pl-none"
+                to="#skills"
+                label="Habilidades"
+                align="left"
+              />
+              <q-btn
+                flat
+                class="text-third-color q-pl-none"
+                to="#contact"
+                label="Contato"
+                align="left"
+              />
             </nav>
           </div>
 
