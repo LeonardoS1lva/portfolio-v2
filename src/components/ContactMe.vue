@@ -52,7 +52,7 @@ const submitForm = (event) => {
         <div class="row q-col-gutter-xl q-pa-md">
           <div class="col-md-6 col-12">
             <q-form :action="`https://formsubmit.co/${myEmail}`" method="POST" @submit="submitForm">
-              <span class="text-secondary-color"> Nome </span>
+              <span class="text-secondary-color text-weight-medium"> Nome </span>
               <q-input
                 outlined
                 v-model="form.name"
@@ -65,7 +65,9 @@ const submitForm = (event) => {
                 color="secondary-color"
                 :dark="useTheme.theme !== 'light'"
               />
-              <span class="text-secondary-color"> Email </span>
+              <span class="text-secondary-color text-weight-medium text-weight-medium">
+                Email
+              </span>
               <q-input
                 outlined
                 v-model="form.email"
@@ -82,7 +84,7 @@ const submitForm = (event) => {
                 color="secondary-color"
                 :dark="useTheme.theme !== 'light'"
               />
-              <span class="text-secondary-color"> Mensagem </span>
+              <span class="text-secondary-color text-weight-medium"> Mensagem </span>
               <q-input
                 outlined
                 v-model="form.message"
