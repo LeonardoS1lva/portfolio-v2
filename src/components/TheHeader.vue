@@ -28,10 +28,28 @@ defineProps({
         <q-toolbar v-if="showLinks" class="gt-sm">
           <q-space />
           <nav>
-            <q-btn flat color="third-color" label="Início" class="q-mr-sm" to="#home" />
-            <q-btn flat color="third-color" label="Projetos" class="q-mr-sm" to="#projects" />
-            <q-btn flat color="third-color" label="Habilidades" class="q-mr-sm" to="#skills" />
-            <q-btn flat color="third-color" label="Contato" class="q-mr-sm" to="#contact" />
+            <q-btn flat color="third-color" label="Início" class="q-mr-sm text-bold" to="#home" />
+            <q-btn
+              flat
+              color="third-color"
+              label="Projetos"
+              class="q-mr-sm text-bold"
+              to="#projects"
+            />
+            <q-btn
+              flat
+              color="third-color"
+              label="Habilidades"
+              class="q-mr-sm text-bold"
+              to="#skills"
+            />
+            <q-btn
+              flat
+              color="third-color"
+              label="Contato"
+              class="q-mr-sm text-bold"
+              to="#contact"
+            />
           </nav>
           <q-space />
         </q-toolbar>
@@ -67,10 +85,17 @@ defineProps({
       <div class="row">
         <q-space />
         <nav class="col-10 q-py-sm row justify-between">
-          <q-btn flat dense color="third-color" label="Início" to="#home" />
-          <q-btn flat dense color="third-color" label="Projetos" to="#projects" />
-          <q-btn flat dense color="third-color" label="Habilidades" to="#skills" />
-          <q-btn flat dense color="third-color" label="Contato" to="#contact" />
+          <q-btn flat dense color="third-color" class="text-bold" label="Início" to="#home" />
+          <q-btn flat dense color="third-color" class="text-bold" label="Projetos" to="#projects" />
+          <q-btn
+            flat
+            dense
+            color="third-color"
+            class="text-bold"
+            label="Habilidades"
+            to="#skills"
+          />
+          <q-btn flat dense color="third-color" class="text-bold" label="Contato" to="#contact" />
         </nav>
         <q-space />
       </div>
