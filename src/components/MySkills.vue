@@ -139,7 +139,7 @@ const mySkills = computed(() => [
       </q-card-section>
 
       <q-card-section class="q-pa-md q-gutter-md row justify-center">
-        <div v-for="tech in mySkills" :key="tech.name" class="q-mr-md">
+        <div v-for="tech in mySkills" :key="tech.name">
           <CardTechs
             :name-icon="tech.icon"
             :color-icon="tech.color"
