@@ -23,6 +23,10 @@ import MySkills from 'src/components/MySkills.vue'
         <q-separator class="q-my-md q-py-xs bg-primary-color" />
 
         <ContactMe id="contact" />
+
+        <q-page-scroller position="bottom-right" :offset="[18, 18]">
+          <q-btn fab icon="keyboard_arrow_up" color="primary-color" text-color="third-color" />
+        </q-page-scroller>
       </div>
       <q-space />
     </div>
