@@ -27,7 +27,7 @@ defineProps({
 
 <template>
   <q-card
-    style="width: 400px; border-radius: 12px"
+    style="width: 100%; max-width: 400px; border-radius: 12px"
     class="bg-background-card full-height row column"
   >
     <q-card-section class="q-pa-none">
