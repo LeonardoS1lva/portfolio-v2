@@ -25,7 +25,7 @@ defineProps({
           </q-toolbar-title>
         </q-toolbar>
 
-        <q-toolbar v-if="showLinks" class="gt-sm">
+        <q-toolbar v-if="showLinks" class="col-6 gt-sm">
           <q-space />
           <nav>
             <q-btn flat color="third-color" label="Início" to="#home" />
