@@ -26,9 +26,12 @@ defineProps({
 </script>
 
 <template>
-  <q-card style="width: 300px; border-radius: 12px" class="bg-background-card">
+  <q-card
+    style="width: 400px; border-radius: 12px"
+    class="bg-background-card full-height row column"
+  >
     <q-card-section class="q-pa-none">
-      <q-img :src="imgProject" style="border-radius: 12px 12px 0 0" width="100%" fit="cover" />
+      <q-img :src="imgProject" style="border-radius: 12px 12px 0 0" height="220px" fit="cover" />
     </q-card-section>
 
     <q-card-section>
@@ -36,7 +39,9 @@ defineProps({
       <div class="text-subtitle2 text-secondary-color-light">{{ projectDescription }}</div>
     </q-card-section>
 
-    <q-card-actions class="q-pa-md">
+    <q-space />
+
+    <q-card-actions class="q-px-md q-pb-md">
       <q-btn
         no-caps
         color="primary-color"

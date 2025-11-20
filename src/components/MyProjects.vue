@@ -1,6 +1,7 @@
 <script setup>
 import CardProject from 'src/components/cards/CardProject.vue'
 import { useThemeStore } from 'src/stores/themeStore'
+import projects from 'src/utils/projects'
 
 const useTheme = useThemeStore()
 </script>
@@ -23,8 +24,14 @@ const useTheme = useThemeStore()
       </q-card-section>
 
       <q-card-section class="q-pa-md q-gutter-md row justify-center">
-        <div v-for="i in 4" :key="i">
-          <CardProject />
+        <div v-for="(project, index) in projects" :key="index">
+          <CardProject
+            :img-project="project.imgProject"
+            :project-name="project.projectName"
+            :project-description="project.projectDescription"
+            :project-link="project.projectLink"
+            :label-button="project.labelButton"
+          />
         </div>
       </q-card-section>
 
