@@ -12,7 +12,7 @@ export default [
     projectName: 'Roda da Vida',
     projectDescription:
       'Ferramenta de autoconhecimento que ajuda a medir o nível de satisfação em diferentes aspectos da , focado em mulheres com jornada dupla de trabalho.',
-    projectLink: 'https://example.com/projeto_roda_da_vida',
+    projectLink: 'https://projeto-roda-da-vida.vercel.app/',
     labelButton: 'Ver Projeto',
   },
   {
@@ -28,7 +28,7 @@ export default [
     projectName: 'Jogo da Memória',
     projectDescription:
       'Um jogo da memória simples desenvolvido para ajudar crianças a melhorar suas habilidades cognitivas e de memória.',
-    projectLink: 'https://example.com/jogo_da_memoria',
+    projectLink: 'https://jogo-da-memoria-2-nu.vercel.app/',
     labelButton: 'Ver Projeto',
   },
 ]
