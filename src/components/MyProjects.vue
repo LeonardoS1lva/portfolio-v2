@@ -1,7 +1,7 @@
 <script setup>
 import CardProject from 'src/components/cards/CardProject.vue'
 import { useThemeStore } from 'src/stores/themeStore'
-import projects from 'src/utils/projects'
+import projects from 'src/utils/homeProjects'
 
 const useTheme = useThemeStore()
 </script>
