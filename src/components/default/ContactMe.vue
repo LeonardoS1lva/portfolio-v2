@@ -15,13 +15,6 @@ const form = ref({
 
 const submitForm = (event) => {
   if (form.value.name && form.value.email && form.value.message) {
-    // console.log('Formulário enviado:', {
-    //   name: form.value.name,
-    //   email: form.value.email,
-    //   message: form.value.message,
-    // })
-    console.log('Formulário enviado com sucesso!')
-
     event.target.submit()
 
     form.value.name = ''
@@ -126,7 +119,7 @@ const submitForm = (event) => {
                   flat
                   class="text-secondary-color-light"
                   icon="fab fa-linkedin"
-                  href="https://www.linkedin.com/in/leonardo-correia95"
+                  href="https://www.linkedin.com/in/leonardos1lva/"
                   target="_blank"
                 />
                 <q-btn
@@ -134,7 +127,7 @@ const submitForm = (event) => {
                   flat
                   class="text-secondary-color-light"
                   icon="fab fa-github"
-                  href="https://github.com/leonardo-correia"
+                  href="https://github.com/LeonardoS1lva"
                   target="_blank"
                 />
               </div>

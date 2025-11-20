@@ -1,5 +1,5 @@
 <script setup>
-import CardProject from 'src/components/cards/CardProject.vue'
+import CardProject from 'src/components/default/cards/CardProject.vue'
 import { useThemeStore } from 'src/stores/themeStore'
 import projects from 'src/utils/homeProjects'
 

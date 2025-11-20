@@ -1,6 +1,5 @@
 <script setup>
-import CardTechs from 'src/components/cards/CardTechs.vue'
-import { useThemeStore } from 'src/stores/themeStore'
+import CardTechs from 'src/components/default/cards/CardTechs.vue'
 import { computed } from 'vue'
 
 import vueLogo from 'src/assets/icons/pixel-art/tecnologies/vue_pxArt.png'
@@ -21,101 +20,90 @@ import vscodeLogo from 'src/assets/icons/pixel-art/tecnologies/vscode_pxArt.png'
 import pwaLogo from 'src/assets/icons/pixel-art/tecnologies/pwa_pxArt.png'
 import viteLogo from 'src/assets/icons/pixel-art/tecnologies/vite_pxArt.png'
 
-const themeStore = useThemeStore()
-
 const mySkills = computed(() => [
   {
     name: 'Vue.js',
-    icon: themeStore.theme === 'pixel-art' ? vueLogo : 'fab fa-vuejs',
+    icon: vueLogo,
     color: '#42b883',
   },
   {
     name: 'Quasar',
-    icon:
-      themeStore.theme === 'pixel-art' ? quasarLogo : 'img:src/assets/icons/quasar-original.svg',
+    icon: quasarLogo,
     color: '#27A9E1',
   },
   {
     name: 'Node.js',
-    icon: themeStore.theme === 'pixel-art' ? nodeLogo : 'fab fa-node',
+    icon: nodeLogo,
     color: '#8CC84B',
   },
   {
     name: 'HTML',
-    icon: themeStore.theme === 'pixel-art' ? htmlLogo : 'fab fa-html5',
+    icon: htmlLogo,
     color: '#E34F26',
   },
   {
     name: 'CSS',
-    icon: themeStore.theme === 'pixel-art' ? cssLogo : 'fab fa-css3',
+    icon: cssLogo,
     color: '#1572B6',
   },
   {
     name: 'JavaScript',
-    icon: themeStore.theme === 'pixel-art' ? jsLogo : 'fab fa-js',
+    icon: jsLogo,
     color: '#F7DF1E',
   },
   {
     name: 'Git',
-    icon: themeStore.theme === 'pixel-art' ? gitLogo : 'fab fa-git-alt',
+    icon: gitLogo,
     color: '#F05032',
   },
   {
     name: 'GitHub',
-    icon: themeStore.theme === 'pixel-art' ? githubLogo : 'fab fa-github',
-    color: themeStore.theme === 'light' ? '#181717' : '#F7F7F7',
+    icon: githubLogo,
+    color: '#F7F7F7',
   },
   {
     name: 'Bootstrap',
-    icon: themeStore.theme === 'pixel-art' ? bootstrapLogo : 'fab fa-bootstrap',
+    icon: bootstrapLogo,
     color: '#563D7C',
   },
   {
     name: 'Tailwind CSS',
-    icon:
-      themeStore.theme === 'pixel-art'
-        ? tailwindLogo
-        : 'img:src/assets/icons/tailwindcss-original.svg',
+    icon: tailwindLogo,
     color: '#06B6D4',
   },
   {
     name: 'React',
-    icon: themeStore.theme === 'pixel-art' ? reactLogo : 'fab fa-react',
+    icon: reactLogo,
     color: '#61DAFB',
   },
   {
     name: 'Storybook',
-    icon:
-      themeStore.theme === 'pixel-art'
-        ? storybookLogo
-        : 'img:src/assets/icons/storybook-original.svg',
+    icon: storybookLogo,
     color: '#FF4785',
   },
   {
     name: 'Figma',
-    icon: themeStore.theme === 'pixel-art' ? figmaLogo : 'img:src/assets/icons/figma-original.svg',
+    icon: figmaLogo,
     color: '#F24E1E',
   },
   {
     name: 'Postman',
-    icon:
-      themeStore.theme === 'pixel-art' ? postmanLogo : 'img:src/assets/icons/postman-original.svg',
+    icon: postmanLogo,
     color: '#FF6C37',
   },
   {
     name: 'VS Code',
-    icon:
-      themeStore.theme === 'pixel-art' ? vscodeLogo : 'img:src/assets/icons/vscode-original.svg',
+    icon: vscodeLogo,
     color: '#007ACC',
   },
   {
     name: 'PWA',
-    icon: themeStore.theme === 'pixel-art' ? pwaLogo : 'fas fa-mobile-alt',
+    icon: pwaLogo,
     color: '#000000',
   },
   {
     name: 'Vite',
-    icon: themeStore.theme === 'pixel-art' ? viteLogo : 'img:src/assets/icons/vitejs-original.svg',
+    icon: viteLogo,
     color: '#646CFF',
   },
 ])
@@ -144,7 +132,7 @@ const mySkills = computed(() => [
             :name-icon="tech.icon"
             :color-icon="tech.color"
             :name="tech.name"
-            :has-extern-icon="themeStore.theme === 'pixel-art'"
+            has-extern-icon
           />
         </div>
       </q-card-section>

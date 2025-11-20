@@ -55,7 +55,7 @@ body.body--dark {
     --background-card: url('/src/assets/backgrounds/background_blue.webp');
     background: url('/src/assets/backgrounds/background_blue.webp');
 
-    cursor: url('/src/assets/icons/pixel-art/cursors/cursor-pixel.png'), auto;
+    /* cursor: url('/src/assets/icons/pixel-art/cursors/cursor-pixel.png'), auto; */
 }
 
 .body--pixel-art .bg-background-stars {
@@ -76,8 +76,41 @@ body.body--dark {
     font-size: 1rem;
 }
 
+.body--pixel-art .q-field__native {
+    color: white;
+}
+
+/* .body--pixel-art .q-field__label {
+    color: rgb(202, 202, 202);
+} */
+
 /* .body--pixel-art header>nav {
     font-size: 1.2rem;
+} */
+/* .nes-btn.is-custom-primary {
+    color: #fff !important;
+    background-color: #f0a370 !important;
+}
+
+.nes-btn.is-custom-primary::after {
+    box-shadow: inset -4px -4px #b36d3e !important;
+}
+
+.nes-btn.is-custom-primary:hover {
+    color: #fff !important;
+    background-color: #d89162 !important;
+}
+
+.nes-btn.is-custom-primary:hover::after {
+    box-shadow: inset -6px -6px #b36d3e !important;
+}
+
+.nes-btn.is-custom-primary:focus {
+    box-shadow: 0 0 0 6px #b36d3e4d !important;
+}
+
+.nes-btn.is-custom-primary:active:not(.is-disabled)::after {
+    box-shadow: inset 4px 4px #b36d3e !important;
 } */
 
 .option-light {

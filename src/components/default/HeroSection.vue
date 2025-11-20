@@ -1,7 +1,6 @@
 <script setup>
 import logo from 'src/assets/backgrounds/logo_holograma.png'
 import logoYellow from 'src/assets/backgrounds/logo_holograma_yellow.png'
-import logoPixel from 'src/assets/backgrounds/logo_holograma_pixel.png'
 import logoGray from 'src/assets/backgrounds/logo_holograma_gray.png'
 import { useThemeStore } from 'src/stores/themeStore'
 import { computed } from 'vue'
@@ -11,8 +10,6 @@ const useTheme = useThemeStore()
 const logoImg = computed(() => {
   if (useTheme.theme === 'black-yellow') {
     return logoYellow
-  } else if (useTheme.theme === 'pixel-art') {
-    return logoPixel
   } else if (useTheme.theme === 'dark') {
     return logoGray
   }
@@ -62,7 +59,6 @@ const logoImg = computed(() => {
     </q-card>
 
     <q-card class="col-6 bg-background-card gt-sm" flat>
-      <!-- :src="useTheme.theme === 'black-yellow' ? logoYellow : logo" -->
       <q-img :src="logoImg" style="object-fit: cover" />
     </q-card>
   </div>
