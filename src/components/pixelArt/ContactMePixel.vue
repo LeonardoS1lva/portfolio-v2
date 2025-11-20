@@ -97,7 +97,12 @@ const submitForm = (event) => {
 
               <input type="hidden" name="_next" :value="`${mySite}/sent`" />
 
-              <q-btn class="nes-btn is-primary" type="submit" label="Enviar Mensagem" />
+              <q-btn
+                class="nes-btn is-primary"
+                :class="$q.screen.lt.md ? 'full-width' : ''"
+                type="submit"
+                label="Enviar Mensagem"
+              />
             </q-form>
           </div>
 
