@@ -24,12 +24,20 @@ const logoImg = computed(() => {
   <div class="row">
     <q-card class="col-md-6 col-sm-12 flex items-center bg-background-card" flat>
       <div class="q-pa-md">
-        <h1 class="text-secondary-color text-bold text-h3">Olá, me chamo Leonardo Silva</h1>
-        <h2 class="text-secondary-color-light text-weight-regular text-h6 q-my-md">
+        <h1
+          class="text-secondary-color text-bold"
+          :class="$q.screen.gt.sm ? 'text-h3' : 'text-h4 text-center q-pt-md'"
+        >
+          Olá, me chamo Leonardo Silva
+        </h1>
+        <h2
+          class="text-secondary-color-light text-weight-regular text-h6 q-my-md"
+          :class="$q.screen.gt.sm ? '' : 'text-center'"
+        >
           Sou um desenvolvedor web e aqui você pode conhecer um pouco mais sobre mim e ver alguns
           dos meus projetos.
         </h2>
-        <div>
+        <div :class="$q.screen.gt.sm ? '' : 'text-center'">
           <q-btn
             color="primary-color"
             text-color="third-color"
