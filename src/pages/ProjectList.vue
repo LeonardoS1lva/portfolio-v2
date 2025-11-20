@@ -1,6 +1,6 @@
 <script setup>
 import { computed, ref } from 'vue'
-import CardListProjects from 'src/components/cards/CardListProjects.vue'
+import CardListProjects from 'src/components/default/cards/CardListProjects.vue'
 import projects from 'src/utils/allProjects'
 
 const filters = ['Todos', 'Vue/Quasar', 'HTML/CSS', 'Javascript', 'Outros']
