@@ -20,7 +20,7 @@ defineProps({
           <q-toolbar-title class="text-bold text-third-color">
             <q-btn flat class="text-third-color text-h6" to="/">
               <span class="text-bold gt-sm">Leonardo Silva</span>
-              <q-icon name="home" class="lt-md" />
+              <q-icon name="home" class="lt-md" size="md" />
             </q-btn>
           </q-toolbar-title>
         </q-toolbar>
