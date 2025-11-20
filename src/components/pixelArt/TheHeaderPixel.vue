@@ -16,7 +16,7 @@ defineProps({
     <q-space />
     <div class="col-11">
       <div class="row no-wrap">
-        <q-toolbar class="q-py-sm col-3">
+        <q-toolbar :class="$q.screen.gt.sm ? 'q-py-md' : 'q-py-sm'">
           <q-toolbar-title class="text-bold text-third-color">
             <q-btn flat class="text-third-color text-h6" to="/">
               <span class="text-bold gt-sm">Leonardo Silva</span>
@@ -25,7 +25,7 @@ defineProps({
           </q-toolbar-title>
         </q-toolbar>
 
-        <q-toolbar v-if="showLinks" class="col-6">
+        <q-toolbar v-if="showLinks" class="gt-sm">
           <q-space />
           <nav>
             <q-btn flat color="third-color" label="Início" to="#home" />
@@ -36,7 +36,7 @@ defineProps({
           <q-space />
         </q-toolbar>
 
-        <q-toolbar class="col-3">
+        <q-toolbar>
           <q-space />
 
           <q-btn
@@ -70,5 +70,50 @@ defineProps({
       </div>
     </div>
     <q-space />
+
+    <div v-if="showLinks" class="col-12 lt-md">
+      <q-separator class="bg-third-color" />
+      <div class="row">
+        <q-space />
+        <nav class="col-10 q-py-sm row">
+          <q-btn
+            flat
+            dense
+            color="third-color"
+            class="text-caption col-6"
+            label="Início"
+            to="#home"
+          />
+
+          <q-btn
+            flat
+            dense
+            color="third-color"
+            class="text-caption col-6"
+            label="Projetos"
+            to="#projects"
+          />
+
+          <q-btn
+            flat
+            dense
+            color="third-color"
+            class="text-caption col-6"
+            label="Habilidades"
+            to="#skills"
+          />
+
+          <q-btn
+            flat
+            dense
+            color="third-color"
+            class="text-caption col-6"
+            label="Contato"
+            to="#contact"
+          />
+        </nav>
+        <q-space />
+      </div>
+    </div>
   </q-header>
 </template>
