@@ -26,8 +26,8 @@ const { t } = useI18n()
         <div v-for="project in projects" :key="project.projectName">
           <CardProjectPixel
             :imgProject="project.imgProject"
-            :projectName="project.projectName"
-            :projectDescription="project.projectDescription"
+            :projectName="t(project.projectName)"
+            :projectDescription="t(project.projectDescription)"
             :projectLink="project.projectLink"
             :labelButton="t('common.viewProject')"
           />

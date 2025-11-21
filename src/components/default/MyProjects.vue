@@ -28,8 +28,8 @@ const { t } = useI18n()
         <div v-for="(project, index) in projects" :key="index">
           <CardProject
             :img-project="project.imgProject"
-            :project-name="project.projectName"
-            :project-description="project.projectDescription"
+            :project-name="t(project.projectName)"
+            :project-description="t(project.projectDescription)"
             :project-link="project.projectLink"
             :label-button="t('common.viewProject')"
           />
