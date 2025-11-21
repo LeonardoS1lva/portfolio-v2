@@ -1,0 +1,90 @@
+{
+  "orientation": "portrait",
+  "background_color": "#00507d",
+  "theme_color": "#00507d",
+  "icons": [
+    {
+      "src": "icons/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-256x256.png",
+      "sizes": "256x256",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png"
+    },
+    {
+      "src": "icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "purpose": "maskable",
+      "sizes": "128x128",
+      "src": "maskable-icons/maskable_icon_x128.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "maskable",
+      "sizes": "192x192",
+      "src": "maskable-icons/maskable_icon_x192.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "maskable",
+      "sizes": "256x256",
+      "src": "maskable-icons/maskable_icon_x256.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "maskable",
+      "sizes": "384x384",
+      "src": "maskable-icons/maskable_icon_x384.png",
+      "type": "image/png"
+    },
+    {
+      "purpose": "maskable",
+      "sizes": "512x512",
+      "src": "maskable-icons/maskable_icon_x512.png",
+      "type": "image/png"
+    }
+  ],
+  "categories": ["games", "arcade", "retro", "puzzle"],
+  "display": "standalone",
+  "start_url": "/",
+  "name": "Portfolio - Leonardo Silva",
+  "short_name": "Portfolio",
+  "description": "Portfolio pessoal de Leonardo Silva, desenvolvedor Full Stack.",
+  "lang": "pt-BR",
+  "dir": "ltr",
+  "scope": "/",
+  "launcher_handler": {
+    "client_mode": "auto"
+  },
+  "prefer_related_applications": false,
+  "screenshots": [
+    {
+      "src": "screenshots/screenshot_desktop.webp",
+      "sizes": "1920x953",
+      "type": "image/webp",
+      "form_factor": "wide"
+    },
+    {
+      "src": "screenshots/screenshot_mobile.webp",
+      "sizes": "1187x2410",
+      "type": "image/webp",
+      "form_factor": "narrow"
+    }
+  ],
+  "display_override": ["window-controls-overlay"]
+}
