@@ -21,7 +21,7 @@ export default [
     labelButton: 'Ver Projeto',
     hasLinkCode: false,
     status: 2,
-    stacks: ['HTML', 'CSS', 'JavaScript'],
+    stacks: ['HTML', 'CSS', 'JavaScript', 'Firebase'],
   },
   {
     imgProject: 'src/assets/projects/beija_flor.webp',
@@ -40,6 +40,7 @@ export default [
     projectDescription:
       'Um jogo da memória simples desenvolvido para ajudar crianças a melhorar suas habilidades cognitivas e de memória.',
     projectLink: 'https://jogo-da-memoria-2-nu.vercel.app/',
+    codeLink: 'https://github.com/LeonardoS1lva/jogo-da-memoria-2',
     labelButton: 'Ver Projeto',
     status: 2,
     stacks: ['Vue', 'Quasar'],
