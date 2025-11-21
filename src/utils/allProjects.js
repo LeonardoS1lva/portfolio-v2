@@ -16,7 +16,7 @@ export default [
     imgProject: 'src/assets/projects/projeto_roda_da_vida.webp',
     projectName: 'Roda da Vida',
     projectDescription:
-      'Ferramenta de autoconhecimento que ajuda a medir o nível de satisfação em diferentes aspectos da , focado em mulheres com jornada dupla de trabalho.',
+      'Ferramenta de autoconhecimento que ajuda a medir o nível de satisfação em diferentes aspectos da vida, focado em mulheres com jornada dupla de trabalho.',
     projectLink: 'https://projeto-roda-da-vida.vercel.app/',
     labelButton: 'Ver Projeto',
     hasLinkCode: false,
