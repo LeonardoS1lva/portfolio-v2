@@ -1,8 +1,10 @@
 <script setup>
 import { useI18n } from 'vue-i18n'
 import { useTheme } from 'src/composables/useTheme.js'
+import { useLanguage } from 'src/composables/useLanguage.js'
 
 const { changeTheme, themeOptions } = useTheme()
+const { setLanguage, languageOptions, currentLanguage } = useLanguage()
 const { t } = useI18n()
 
 defineProps({
@@ -78,6 +80,26 @@ defineProps({
                 >
                   <q-item-section>
                     <q-item-label>{{ theme.label }}</q-item-label>
+                  </q-item-section>
+                </q-item>
+              </q-list>
+            </q-menu>
+          </q-btn>
+
+          <q-btn round dense flat color="third-color" icon="language" class="q-mr-md">
+            <q-menu>
+              <q-list>
+                <q-item
+                  v-for="language in languageOptions"
+                  :key="language.value"
+                  dense
+                  clickable
+                  @click="setLanguage(language.value)"
+                  :active="language.value === currentLanguage"
+                  active-class="text-third-color bg-primary-color"
+                >
+                  <q-item-section>
+                    <q-item-label>{{ language.label }}</q-item-label>
                   </q-item-section>
                 </q-item>
               </q-list>

@@ -1,8 +1,10 @@
 <script setup>
 import { useI18n } from 'vue-i18n'
 import { useTheme } from 'src/composables/useTheme.js'
+import { useLanguage } from 'src/composables/useLanguage.js'
 
 const { changeTheme, themeOptions } = useTheme()
+const { setLanguage, languageOptions, currentLanguage } = useLanguage()
 const { t } = useI18n()
 
 defineProps({
@@ -22,7 +24,7 @@ defineProps({
           <q-toolbar-title class="text-bold text-third-color">
             <q-btn flat class="text-third-color text-h6" to="/">
               <span class="text-bold gt-sm">Leonardo Silva</span>
-              <q-icon name="home" class="lt-md" />
+              <q-icon name="img:src/assets/icons/pixel-art/icon_home.png" class="lt-md" />
             </q-btn>
           </q-toolbar-title>
         </q-toolbar>
@@ -63,6 +65,35 @@ defineProps({
                 >
                   <q-item-section>
                     <q-item-label>{{ theme.label }}</q-item-label>
+                  </q-item-section>
+                </q-item>
+              </q-list>
+            </q-menu>
+          </q-btn>
+
+          <q-btn
+            round
+            dense
+            flat
+            color="third-color"
+            icon="img:src/assets/icons/pixel-art/icon_globo.png"
+            class="q-mr-md"
+            padding="0"
+            size="xl"
+          >
+            <q-menu>
+              <q-list>
+                <q-item
+                  v-for="language in languageOptions"
+                  :key="language.value"
+                  dense
+                  clickable
+                  @click="setLanguage(language.value)"
+                  :active="language.value === currentLanguage"
+                  active-class="text-third-color bg-primary-color"
+                >
+                  <q-item-section>
+                    <q-item-label>{{ language.label }}</q-item-label>
                   </q-item-section>
                 </q-item>
               </q-list>
