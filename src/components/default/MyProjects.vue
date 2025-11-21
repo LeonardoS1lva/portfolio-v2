@@ -31,7 +31,7 @@ const { t } = useI18n()
             :project-name="project.projectName"
             :project-description="project.projectDescription"
             :project-link="project.projectLink"
-            :label-button="project.labelButton"
+            :label-button="t('common.viewProject')"
           />
         </div>
       </q-card-section>

@@ -5,7 +5,6 @@ export default [
     projectDescription:
       'A Plataforma é um sistema desenvolvido para apresentação e organização dos projetos do laboratório de Cidades Sustentáveis localizado no CPID.',
     projectLink: 'https://plataformacpid.com.br/',
-    labelButton: 'Ver Projeto',
   },
   {
     imgProject: 'src/assets/projects/projeto_roda_da_vida.webp',
@@ -13,7 +12,6 @@ export default [
     projectDescription:
       'Ferramenta de autoconhecimento que ajuda a medir o nível de satisfação em diferentes aspectos da vida, focado em mulheres com jornada dupla de trabalho.',
     projectLink: 'https://projeto-roda-da-vida.vercel.app/',
-    labelButton: 'Ver Projeto',
   },
   {
     imgProject: 'src/assets/projects/beija_flor.webp',
@@ -21,7 +19,6 @@ export default [
     projectDescription:
       'Um site para organização de dados coletados por um sistema de monitoramento ambiental de beija-flores.',
     projectLink: 'https://app1.arandu.org.br/',
-    labelButton: 'Ver Projeto',
   },
   {
     imgProject: 'src/assets/projects/jogo_da_memoria.webp',
@@ -29,6 +26,5 @@ export default [
     projectDescription:
       'Um jogo da memória simples desenvolvido para ajudar crianças a melhorar suas habilidades cognitivas e de memória.',
     projectLink: 'https://jogo-da-memoria-2-nu.vercel.app/',
-    labelButton: 'Ver Projeto',
   },
 ]
