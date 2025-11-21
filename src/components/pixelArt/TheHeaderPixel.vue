@@ -2,6 +2,9 @@
 import { useI18n } from 'vue-i18n'
 import { useTheme } from 'src/composables/useTheme.js'
 import { useLanguage } from 'src/composables/useLanguage.js'
+import iconHome from 'src/assets/icons/pixel-art/icon_home.png'
+import iconWatercolor from 'src/assets/icons/pixel-art/watercolor_pxArt.png'
+import iconLanguage from 'src/assets/icons/pixel-art/icon_globo.png'
 
 const { changeTheme, themeOptions } = useTheme()
 const { setLanguage, languageOptions, currentLanguage } = useLanguage()
@@ -24,7 +27,7 @@ defineProps({
           <q-toolbar-title class="text-bold text-third-color">
             <q-btn flat class="text-third-color text-h6" to="/">
               <span class="text-bold gt-sm">Leonardo Silva</span>
-              <q-icon name="img:src/assets/icons/pixel-art/icon_home.png" class="lt-md" />
+              <q-icon :name="`img:${iconHome}`" class="lt-md" />
             </q-btn>
           </q-toolbar-title>
         </q-toolbar>
@@ -48,7 +51,7 @@ defineProps({
             dense
             flat
             color="third-color"
-            icon="img:src/assets/icons/pixel-art/watercolor_pxArt.png"
+            :icon="`img:${iconWatercolor}`"
             class="q-mr-md"
             padding="0"
             size="xl"
@@ -76,7 +79,7 @@ defineProps({
             dense
             flat
             color="third-color"
-            icon="img:src/assets/icons/pixel-art/icon_globo.png"
+            :icon="`img:${iconLanguage}`"
             class="q-mr-md"
             padding="0"
             size="xl"

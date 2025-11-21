@@ -1,8 +1,22 @@
-// status: 1 = Em progresso, 2 = Concluído, 3 = Pausado
+import imgPlataformaCpid from 'src/assets/projects/plataforma_cpid.webp'
+import imgProjetoRodaDaVida from 'src/assets/projects/projeto_roda_da_vida.webp'
+import imgRedeBeijaFlor from 'src/assets/projects/beija_flor.webp'
+import imgJogoDaMemoria from 'src/assets/projects/jogo_da_memoria.webp'
+import imgCalculadoraCarrinhoDeCompras from 'src/assets/projects/calculadora_carrinho_de_compras.webp'
+import imgListaDeTarefasPWA from 'src/assets/projects/lista_de_tarefas_pwa.webp'
+import imgToDoReact from 'src/assets/projects/to_do_react.webp'
+import imgPortfolioV1 from 'src/assets/projects/portfolio_v1.webp'
+import imgAdviceGenerator from 'src/assets/projects/advice_generator.webp'
+import imgIpAddressTracker from 'src/assets/projects/ip_address_tracker.webp'
+import imgWeatherTestApi from 'src/assets/projects/weather_test_api.webp'
+import imgQrCodeGenerator from 'src/assets/projects/gerador_de_qrcode.webp'
+import imgPasswordGenerator from 'src/assets/projects/gerador_de_senhas.webp'
+import imgShoppingCart from 'src/assets/projects/carrinho_de_compras.webp'
 
+// status: 1 = Em progresso, 2 = Concluído, 3 = Pausado
 export default [
   {
-    imgProject: 'src/assets/projects/plataforma_cpid.webp',
+    imgProject: imgPlataformaCpid,
     altText: 'Imagem do site Plataforma CPID',
     projectName: 'projects.plataformaCpid.name',
     projectDescription: 'projects.plataformaCpid.description',
@@ -12,7 +26,7 @@ export default [
     stacks: ['Vue', 'Quasar', 'Python', 'MySQL'],
   },
   {
-    imgProject: 'src/assets/projects/projeto_roda_da_vida.webp',
+    imgProject: imgProjetoRodaDaVida,
     altText: 'Roda da Vida',
     projectName: 'projects.rodaDaVida.name',
     projectDescription: 'projects.rodaDaVida.description',
@@ -22,7 +36,7 @@ export default [
     stacks: ['HTML', 'CSS', 'JavaScript', 'Firebase'],
   },
   {
-    imgProject: 'src/assets/projects/beija_flor.webp',
+    imgProject: imgRedeBeijaFlor,
     altText: 'Beija-Flor se alimentando na garrafa',
     projectName: 'projects.redeBeijaFlor.name',
     projectDescription: 'projects.redeBeijaFlor.description',
@@ -32,7 +46,7 @@ export default [
     stacks: ['Vue', 'Quasar'],
   },
   {
-    imgProject: 'src/assets/projects/jogo_da_memoria.webp',
+    imgProject: imgJogoDaMemoria,
     altText: 'Jogo da Memória versão 8 bits',
     projectName: 'projects.memoryGame.name',
     projectDescription: 'projects.memoryGame.description',
@@ -42,7 +56,7 @@ export default [
     stacks: ['Vue', 'Quasar'],
   },
   {
-    imgProject: 'src/assets/projects/calculadora_carrinho_de_compras.webp',
+    imgProject: imgCalculadoraCarrinhoDeCompras,
     altText: 'Calculadora de produtos em um carrinho de compras',
     projectName: 'projects.cartShoppingCalculator.name',
     projectDescription: 'projects.cartShoppingCalculator.description',
@@ -52,7 +66,7 @@ export default [
     stacks: ['Vue', 'Quasar'],
   },
   {
-    imgProject: 'src/assets/projects/lista_de_tarefas_pwa.webp',
+    imgProject: imgListaDeTarefasPWA,
     altText: 'Lista de Tarefas',
     projectName: 'projects.taskListPWA.name',
     projectDescription: 'projects.taskListPWA.description',
@@ -62,7 +76,7 @@ export default [
     stacks: ['Vue', 'Quasar', 'PWA'],
   },
   {
-    imgProject: 'src/assets/projects/to_do_react.webp',
+    imgProject: imgToDoReact,
     altText: 'Lista de Tarefas em React',
     projectName: 'projects.toDoReact.name',
     projectDescription: 'projects.toDoReact.description',
@@ -72,7 +86,7 @@ export default [
     stacks: ['React'],
   },
   {
-    imgProject: 'src/assets/projects/portfolio_v1.webp',
+    imgProject: imgPortfolioV1,
     altText: 'Primeira versão do meu portfólio',
     projectName: 'projects.portfolioV1.name',
     projectDescription: 'projects.portfolioV1.description',
@@ -82,7 +96,7 @@ export default [
     stacks: ['HTML', 'CSS', 'JavaScript'],
   },
   {
-    imgProject: 'src/assets/projects/advice_generator.webp',
+    imgProject: imgAdviceGenerator,
     altText: 'Gerador de Conselhos',
     projectName: 'projects.adviceGenerator.name',
     projectDescription: 'projects.adviceGenerator.description',
@@ -92,7 +106,7 @@ export default [
     stacks: ['HTML', 'CSS', 'JavaScript'],
   },
   {
-    imgProject: 'src/assets/projects/ip_address_tracker.webp',
+    imgProject: imgIpAddressTracker,
     altText: 'Rastreador de Endereço IP',
     projectName: 'projects.ipAddressTracker.name',
     projectDescription: 'projects.ipAddressTracker.description',
@@ -102,7 +116,7 @@ export default [
     stacks: ['HTML', 'CSS', 'JavaScript'],
   },
   {
-    imgProject: 'src/assets/projects/weather_test_api.webp',
+    imgProject: imgWeatherTestApi,
     altText: 'Aplicação de Previsão do Tempo',
     projectName: 'projects.weatherTestApi.name',
     projectDescription: 'projects.weatherTestApi.description',
@@ -112,7 +126,7 @@ export default [
     stacks: ['HTML', 'CSS', 'JavaScript'],
   },
   {
-    imgProject: 'src/assets/projects/gerador_de_qrcode.webp',
+    imgProject: imgQrCodeGenerator,
     altText: 'Gerador de QR Code',
     projectName: 'projects.qrCodeGenerator.name',
     projectDescription: 'projects.qrCodeGenerator.description',
@@ -122,7 +136,7 @@ export default [
     stacks: ['HTML', 'Bootstrap', 'JavaScript'],
   },
   {
-    imgProject: 'src/assets/projects/gerador_de_senhas.webp',
+    imgProject: imgPasswordGenerator,
     altText: 'Gerador de Senhas',
     projectName: 'projects.passwordGenerator.name',
     projectDescription: 'projects.passwordGenerator.description',
@@ -132,7 +146,7 @@ export default [
     stacks: ['HTML', 'CSS', 'JavaScript'],
   },
   {
-    imgProject: 'src/assets/projects/carrinho_de_compras.webp',
+    imgProject: imgShoppingCart,
     altText: 'Carrinho de Compras',
     projectName: 'projects.shoppingCart.name',
     projectDescription: 'projects.shoppingCart.description',

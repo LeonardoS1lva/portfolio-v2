@@ -3,6 +3,13 @@ import { computed } from 'vue'
 import { useI18n } from 'vue-i18n'
 import CardTechs from 'src/components/default/cards/CardTechs.vue'
 import { useThemeStore } from 'src/stores/themeStore'
+import imgQuasar from 'src/assets/icons/quasar-original.svg'
+import imgTailwind from 'src/assets/icons/tailwindcss-original.svg'
+import imgStorybook from 'src/assets/icons/storybook-original.svg'
+import imgFigma from 'src/assets/icons/figma-original.svg'
+import imgPostman from 'src/assets/icons/postman-original.svg'
+import imgVSCode from 'src/assets/icons/vscode-original.svg'
+import imgVite from 'src/assets/icons/vitejs-original.svg'
 
 const themeStore = useThemeStore()
 const { t } = useI18n()
@@ -15,7 +22,7 @@ const mySkills = computed(() => [
   },
   {
     name: 'Quasar',
-    icon: 'img:src/assets/icons/quasar-original.svg',
+    icon: `img:${imgQuasar}`,
     color: '#27A9E1',
   },
   {
@@ -55,7 +62,7 @@ const mySkills = computed(() => [
   },
   {
     name: 'Tailwind CSS',
-    icon: 'img:src/assets/icons/tailwindcss-original.svg',
+    icon: `img:${imgTailwind}`,
     color: '#06B6D4',
   },
   {
@@ -65,22 +72,22 @@ const mySkills = computed(() => [
   },
   {
     name: 'Storybook',
-    icon: 'img:src/assets/icons/storybook-original.svg',
+    icon: `img:${imgStorybook}`,
     color: '#FF4785',
   },
   {
     name: 'Figma',
-    icon: 'img:src/assets/icons/figma-original.svg',
+    icon: `img:${imgFigma}`,
     color: '#F24E1E',
   },
   {
     name: 'Postman',
-    icon: 'img:src/assets/icons/postman-original.svg',
+    icon: `img:${imgPostman}`,
     color: '#FF6C37',
   },
   {
     name: 'VS Code',
-    icon: 'img:src/assets/icons/vscode-original.svg',
+    icon: `img:${imgVSCode}`,
     color: '#007ACC',
   },
   {
@@ -90,7 +97,7 @@ const mySkills = computed(() => [
   },
   {
     name: 'Vite',
-    icon: 'img:src/assets/icons/vitejs-original.svg',
+    icon: `img:${imgVite}`,
     color: '#646CFF',
   },
 ])
