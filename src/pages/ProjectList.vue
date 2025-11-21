@@ -1,7 +1,11 @@
 <script setup>
 import { computed, ref } from 'vue'
 import CardListProjects from 'src/components/default/cards/CardListProjects.vue'
+import CardListProjectsPixel from 'src/components/pixelArt/cards/CardListProjects.vue'
 import projects from 'src/utils/allProjects'
+import { useThemeStore } from 'src/stores/themeStore'
+
+const useTheme = useThemeStore()
 
 const filters = ['Todos', 'Vue/Quasar', 'HTML/CSS', 'Javascript', 'Outros']
 const activeFilter = ref('Todos')
@@ -55,6 +59,20 @@ const filteredItems = computed(() => {
           class="col-lg-3 col-md-4 col-sm-6 col-12 row justify-center"
         >
           <CardListProjects
+            v-if="useTheme.theme !== 'pixel-art'"
+            :imgProject="project.imgProject"
+            :altText="project.altText"
+            :projectName="project.projectName"
+            :projectDescription="project.projectDescription"
+            :status="project.status"
+            :hasLinkCode="project.hasLinkCode"
+            :hasLinkProject="project.hasLinkProject"
+            :linkCode="project.codeLink"
+            :linkProject="project.projectLink"
+            :stacks="project.stacks"
+          />
+          <CardListProjectsPixel
+            v-else
             :imgProject="project.imgProject"
             :altText="project.altText"
             :projectName="project.projectName"
@@ -70,5 +88,9 @@ const filteredItems = computed(() => {
       </div>
     </div>
     <q-space />
+
+    <q-page-scroller position="bottom-right" :offset="[18, 18]">
+      <q-btn fab icon="keyboard_arrow_up" color="primary-color" text-color="third-color" />
+    </q-page-scroller>
   </q-page>
 </template>
