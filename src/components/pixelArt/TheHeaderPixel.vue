@@ -1,7 +1,9 @@
 <script setup>
+import { useI18n } from 'vue-i18n'
 import { useTheme } from 'src/composables/useTheme.js'
 
 const { changeTheme, themeOptions } = useTheme()
+const { t } = useI18n()
 
 defineProps({
   showLinks: {
@@ -28,10 +30,10 @@ defineProps({
         <q-toolbar v-if="showLinks" class="col-6 gt-sm">
           <q-space />
           <nav>
-            <q-btn flat color="third-color" label="Início" to="#home" />
-            <q-btn flat color="third-color" label="Projetos" to="#projects" />
-            <q-btn flat color="third-color" label="Habilidades" to="#skills" />
-            <q-btn flat color="third-color" label="Contato" to="#contact" />
+            <q-btn flat color="third-color" :label="t('common.home')" to="#home" />
+            <q-btn flat color="third-color" :label="t('common.projects')" to="#projects" />
+            <q-btn flat color="third-color" :label="t('common.skills')" to="#skills" />
+            <q-btn flat color="third-color" :label="t('common.contact')" to="#contact" />
           </nav>
           <q-space />
         </q-toolbar>
@@ -81,7 +83,7 @@ defineProps({
             dense
             color="third-color"
             class="text-caption col-6"
-            label="Início"
+            :label="t('common.home')"
             to="#home"
           />
 
@@ -90,7 +92,7 @@ defineProps({
             dense
             color="third-color"
             class="text-caption col-6"
-            label="Projetos"
+            :label="t('common.projects')"
             to="#projects"
           />
 
@@ -99,7 +101,7 @@ defineProps({
             dense
             color="third-color"
             class="text-caption col-6"
-            label="Habilidades"
+            :label="t('common.skills')"
             to="#skills"
           />
 
@@ -108,7 +110,7 @@ defineProps({
             dense
             color="third-color"
             class="text-caption col-6"
-            label="Contato"
+            :label="t('common.contact')"
             to="#contact"
           />
         </nav>

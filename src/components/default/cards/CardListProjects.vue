@@ -1,6 +1,9 @@
 <script setup>
-import defaultImg from 'src/assets/projects/PlaceholderImg.png'
 import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+import defaultImg from 'src/assets/projects/PlaceholderImg.png'
+
+const { t } = useI18n()
 
 const props = defineProps({
   imgProject: {
@@ -13,11 +16,11 @@ const props = defineProps({
   },
   projectName: {
     type: String,
-    default: 'Projeto Exemplo',
+    default: 'Example Project',
   },
   projectDescription: {
     type: String,
-    default: 'Descrição breve do projeto exemplo.',
+    default: 'Description of the example project.',
   },
   colorStatus: {
     type: String,
@@ -55,25 +58,25 @@ const getStatus = computed(() => {
   switch (props.status) {
     case 1:
       return {
-        status: 'Em progresso',
+        status: t('common.progress'),
         backgroundColor: 'yellow-3',
         textColor: 'yellow-10',
       }
     case 2:
       return {
-        status: 'Concluído',
+        status: t('common.completed'),
         backgroundColor: 'green-3',
         textColor: 'green-10',
       }
     case 3:
       return {
-        status: 'Pausado',
+        status: t('common.paused'),
         backgroundColor: 'red-3',
         textColor: 'red-10',
       }
     default:
       return {
-        status: 'Desconhecido',
+        status: t('common.unknown'),
         backgroundColor: 'grey-3',
         textColor: 'grey-10',
       }
@@ -119,7 +122,7 @@ const getStatus = computed(() => {
         no-caps
         color="primary-color"
         text-color="secondary-color"
-        label="Ver Código"
+        :label="t('common.viewCode')"
         :href="linkCode"
         target="_blank"
         rel="noopener noreferrer"
@@ -131,7 +134,7 @@ const getStatus = computed(() => {
         no-caps
         color="primary-color"
         text-color="secondary-color"
-        label="Ver Projeto"
+        :label="t('common.viewProject')"
         :href="linkProject"
         target="_blank"
         rel="noopener noreferrer"

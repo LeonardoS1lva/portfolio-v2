@@ -1,22 +1,23 @@
 <script setup>
+import { useI18n } from 'vue-i18n'
 import CardProject from 'src/components/default/cards/CardProject.vue'
 import { useThemeStore } from 'src/stores/themeStore'
 import projects from 'src/utils/homeProjects'
 
 const useTheme = useThemeStore()
+const { t } = useI18n()
 </script>
 
 <template>
   <div class="row">
     <q-card class="col-12 bg-background-card" flat>
       <q-card-section class="q-pa-md text-center">
-        <h3 class="text-secondary-color text-bold text-h4">Meus Projetos</h3>
+        <h3 class="text-secondary-color text-bold text-h4">{{ t('pages.myProjects.title') }}</h3>
         <div class="row">
           <q-space />
           <div class="col-md-6 col-12">
             <p class="text-h6 text-weight-regular text-secondary-color-light q-mt-md">
-              Alguns dos projetos que desenvolvi, tanto pessoais quanto profissionais. Clique no
-              botão para ver mais detalhes sobre cada projeto.
+              {{ t('pages.myProjects.description') }}
             </p>
           </div>
           <q-space />
@@ -40,7 +41,7 @@ const useTheme = useThemeStore()
           no-caps
           color="primary-color"
           text-color="third-color"
-          label="Mais Projetos"
+          :label="t('common.moreProjects')"
           icon="add"
           :size="useTheme.theme === 'pixel-art' ? 'md' : 'lg'"
           style="width: 300px; max-width: 100%"

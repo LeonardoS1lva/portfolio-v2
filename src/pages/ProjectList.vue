@@ -1,5 +1,6 @@
 <script setup>
 import { computed, ref } from 'vue'
+import { useI18n } from 'vue-i18n'
 import FilterDefault from 'src/components/default/filters/FilterProjects.vue'
 import FilterPixel from 'src/components/pixelArt/filters/FilterProjects.vue'
 import CardListProjects from 'src/components/default/cards/CardListProjects.vue'
@@ -8,12 +9,13 @@ import projects from 'src/utils/allProjects'
 import { useThemeStore } from 'src/stores/themeStore'
 
 const useTheme = useThemeStore()
+const { t } = useI18n()
 
-const filters = ['Todos', 'Vue/Quasar', 'HTML/CSS', 'Javascript', 'Outros']
-const activeFilter = ref('Todos')
+const filters = [t('common.all'), 'Vue/Quasar', 'HTML/CSS', 'Javascript', t('common.others')]
+const activeFilter = ref(t('common.all'))
 
 const filteredItems = computed(() => {
-  if (activeFilter.value === 'Todos') {
+  if (activeFilter.value === t('common.all')) {
     return projects
   } else if (activeFilter.value === 'Vue/Quasar') {
     return projects.filter(
@@ -36,9 +38,9 @@ const filteredItems = computed(() => {
   <q-page class="row">
     <q-space />
     <div class="q-pt-xl col-11">
-      <h1 class="text-h3 text-secondary-color">Lista de Projetos</h1>
+      <h1 class="text-h3 text-secondary-color">{{ t('pages.projectList.title') }}</h1>
       <h2 class="text-h6 q-pt-sm text-secondary-color-light">
-        Aqui estão alguns dos meus projetos mais recentes.
+        {{ t('pages.projectList.subtitle') }}
       </h2>
 
       <FilterDefault

@@ -1,8 +1,11 @@
 <script setup>
-import { useThemeStore } from 'src/stores/themeStore'
 import { ref } from 'vue'
+import { useI18n } from 'vue-i18n'
+import { Notify } from 'quasar'
+import { useThemeStore } from 'src/stores/themeStore'
 
 const useTheme = useThemeStore()
+const { t } = useI18n()
 
 const myEmail = import.meta.env.VITE_MY_EMAIL
 const mySite = import.meta.env.VITE_MY_SITE
@@ -14,12 +17,20 @@ const form = ref({
 })
 
 const submitForm = (event) => {
+  event.preventDefault()
   if (form.value.name && form.value.email && form.value.message) {
     event.target.submit()
 
     form.value.name = ''
     form.value.email = ''
     form.value.message = ''
+  } else {
+    Notify.create({
+      type: 'negative',
+      message: t('notifications.allEmpty'),
+      position: 'top',
+      timeout: 3000,
+    })
   }
 }
 </script>
@@ -28,13 +39,12 @@ const submitForm = (event) => {
   <div class="row q-mb-md">
     <q-card class="col-12 bg-background-card" flat>
       <q-card-section class="q-pa-md text-center">
-        <h3 class="text-secondary-color text-bold text-h4">Entre em Contato</h3>
+        <h3 class="text-secondary-color text-bold text-h4">{{ t('pages.contactMe.title') }}</h3>
         <div class="row">
           <q-space />
           <div class="col-md-6 col-12">
             <p class="text-h6 text-weight-regular text-secondary-color-light q-mt-md">
-              Tem algum projeto em mente ou gostaria de discutir uma ideia? Sinta-se à vontade para
-              entrar em contato!
+              {{ t('pages.contactMe.description') }}
             </p>
           </div>
           <q-space />
@@ -45,48 +55,50 @@ const submitForm = (event) => {
         <div class="row q-col-gutter-xl q-pa-md">
           <div class="col-md-6 col-12">
             <q-form :action="`https://formsubmit.co/${myEmail}`" method="POST" @submit="submitForm">
-              <span class="text-secondary-color text-weight-medium"> Nome </span>
+              <span class="text-secondary-color text-weight-medium"> {{ t('common.name') }} </span>
               <q-input
                 outlined
                 v-model="form.name"
                 name="name"
                 autocomplete="name"
-                label="Seu Nome"
+                :label="t('common.yourName')"
                 class="q-mb-md q-mt-sm"
                 lazy-rules
-                :rules="[(val) => (val && val.length > 0) || 'Nome não pode ser vazio']"
+                :rules="[(val) => (val && val.length > 0) || t('notifications.nameEmpty')]"
                 color="secondary-color"
                 :dark="useTheme.theme !== 'light'"
               />
               <span class="text-secondary-color text-weight-medium text-weight-medium">
-                Email
+                {{ t('common.email') }}
               </span>
               <q-input
                 outlined
                 v-model="form.email"
                 name="email"
                 autocomplete="email"
-                label="Seu Email"
+                :label="t('common.yourEmail')"
                 type="email"
                 class="q-mb-md q-mt-sm"
                 lazy-rules
                 :rules="[
-                  (val) => (val && val.length > 0) || 'Email não pode ser vazio',
-                  (val) => /.+@.+\..+/.test(val) || 'Por favor, digite um email válido',
+                  (val) => (val && val.length > 0) || t('notifications.emailEmpty'),
+                  (val) => /.+@.+\..+/.test(val) || t('notifications.invalidEmail'),
                 ]"
                 color="secondary-color"
                 :dark="useTheme.theme !== 'light'"
               />
-              <span class="text-secondary-color text-weight-medium"> Mensagem </span>
+              <span class="text-secondary-color text-weight-medium">
+                {{ t('common.message') }}
+              </span>
               <q-input
                 outlined
                 v-model="form.message"
                 name="message"
-                label="Sua Mensagem"
+                :label="t('common.yourMessage')"
                 type="textarea"
                 class="q-mb-md q-mt-sm"
                 lazy-rules
-                :rules="[(val) => (val && val.length > 0) || 'Por favor, digite uma mensagem']"
+                :rules="[(val) => (val && val.length > 0) || t('notifications.messageEmpty')]"
                 color="secondary-color"
                 :dark="useTheme.theme !== 'light'"
               />
@@ -96,7 +108,7 @@ const submitForm = (event) => {
               <q-btn
                 color="primary-color"
                 text-color="third-color"
-                label="Enviar Mensagem"
+                :label="t('common.sendMessage')"
                 type="submit"
                 :class="$q.screen.lt.md ? 'full-width' : ''"
               />
@@ -105,14 +117,16 @@ const submitForm = (event) => {
 
           <div class="col-md-6 col-12" :class="$q.screen.lt.md ? 'row justify-between' : ''">
             <div>
-              <h6 class="text-h6 text-bold text-secondary-color">Contato Direto</h6>
+              <h6 class="text-h6 text-bold text-secondary-color">
+                {{ t('common.directContact') }}
+              </h6>
               <div class="text-subtitle2 q-pt-sm text-secondary-color-light">
                 <p class="no-margin">leosilvac95@gmail.com</p>
                 <p>+55 27 99850-1150</p>
               </div>
             </div>
             <div>
-              <h6 class="text-h6 text-bold text-secondary-color">Redes Sociais</h6>
+              <h6 class="text-h6 text-bold text-secondary-color">{{ t('common.socialMedia') }}</h6>
               <div :class="$q.screen.lt.md ? 'row justify-center' : ''">
                 <q-btn
                   no-caps

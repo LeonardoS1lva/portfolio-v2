@@ -1,6 +1,9 @@
 <script setup>
 import { Notify } from 'quasar'
 import { ref } from 'vue'
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
 
 const myEmail = import.meta.env.VITE_MY_EMAIL
 const mySite = import.meta.env.VITE_MY_SITE
@@ -22,7 +25,7 @@ const submitForm = (event) => {
   } else {
     Notify.create({
       type: 'negative',
-      message: 'Por favor, preencha todos os campos.',
+      message: t('notifications.allEmpty'),
       position: 'top',
       timeout: 3000,
     })
@@ -34,13 +37,12 @@ const submitForm = (event) => {
   <div class="row q-mb-md">
     <q-card class="col-12 bg-background-card" flat>
       <q-card-section class="q-pa-md text-center">
-        <h3 class="text-secondary-color text-bold text-h4">Entre em Contato</h3>
+        <h3 class="text-secondary-color text-bold text-h4">{{ t('pages.contactMe.title') }}</h3>
         <div class="row">
           <q-space />
           <div class="col-md-6 col-12">
             <p class="text-h6 text-weight-regular text-secondary-color-light q-mt-md">
-              Tem algum projeto em mente ou gostaria de discutir uma ideia? Sinta-se à vontade para
-              entrar em contato!
+              {{ t('pages.contactMe.description') }}
             </p>
           </div>
           <q-space />
@@ -51,7 +53,7 @@ const submitForm = (event) => {
         <div class="row q-col-gutter-xl q-pa-md">
           <div class="col-md-6 col-12">
             <q-form :action="`https://formsubmit.co/${myEmail}`" method="POST" @submit="submitForm">
-              <span class="text-secondary-color"> Nome </span>
+              <span class="text-secondary-color"> {{ t('common.name') }} </span>
               <div class="q-pb-md q-pt-sm">
                 <q-input
                   v-model="form.name"
@@ -62,10 +64,10 @@ const submitForm = (event) => {
                   borderless
                   label-color="secondary-color"
                   color="secondary-color"
-                  placeholder="Seu nome"
+                  :placeholder="t('common.yourName')"
                 />
               </div>
-              <span class="text-secondary-color"> Email </span>
+              <span class="text-secondary-color"> {{ t('common.email') }} </span>
               <div class="q-pb-md q-pt-sm">
                 <q-input
                   v-model="form.email"
@@ -77,10 +79,10 @@ const submitForm = (event) => {
                   borderless
                   label-color="secondary-color"
                   color="secondary-color"
-                  placeholder="Seu email"
+                  :placeholder="t('common.yourEmail')"
                 />
               </div>
-              <span class="text-secondary-color"> Mensagem </span>
+              <span class="text-secondary-color"> {{ t('common.message') }} </span>
               <div class="q-pb-md q-pt-sm">
                 <q-input
                   v-model="form.message"
@@ -91,7 +93,7 @@ const submitForm = (event) => {
                   borderless
                   label-color="secondary-color"
                   color="secondary-color"
-                  placeholder="Digite sua mensagem"
+                  :placeholder="t('common.yourMessage')"
                 />
               </div>
 
@@ -101,21 +103,23 @@ const submitForm = (event) => {
                 class="nes-btn is-primary"
                 :class="$q.screen.lt.md ? 'full-width' : ''"
                 type="submit"
-                label="Enviar Mensagem"
+                :label="t('common.sendMessage')"
               />
             </q-form>
           </div>
 
           <div class="col-md-6 col-12">
             <div>
-              <h6 class="text-h6 text-bold text-secondary-color">Contato Direto</h6>
+              <h6 class="text-h6 text-bold text-secondary-color">
+                {{ t('common.directContact') }}
+              </h6>
               <div class="text-subtitle2 q-pt-sm text-secondary-color-light">
                 <p class="no-margin">leosilvac95@gmail.com</p>
                 <p>+55 27 99850-1150</p>
               </div>
             </div>
             <div>
-              <h6 class="text-h6 text-bold text-secondary-color">Redes Sociais</h6>
+              <h6 class="text-h6 text-bold text-secondary-color">{{ t('common.socialMedia') }}</h6>
               <div>
                 <span>
                   <a

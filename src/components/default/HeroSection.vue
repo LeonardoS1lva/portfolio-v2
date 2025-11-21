@@ -1,11 +1,13 @@
 <script setup>
+import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
 import logo from 'src/assets/backgrounds/logo_holograma.png'
 import logoYellow from 'src/assets/backgrounds/logo_holograma_yellow.png'
 import logoGray from 'src/assets/backgrounds/logo_holograma_gray.png'
 import { useThemeStore } from 'src/stores/themeStore'
-import { computed } from 'vue'
 
 const useTheme = useThemeStore()
+const { t } = useI18n()
 
 const logoImg = computed(() => {
   if (useTheme.theme === 'black-yellow') {
@@ -25,14 +27,13 @@ const logoImg = computed(() => {
           class="text-secondary-color text-bold"
           :class="$q.screen.gt.sm ? 'text-h3' : 'text-h4 text-center q-pt-md'"
         >
-          Olá, me chamo Leonardo Silva
+          {{ t('pages.heroSection.title') }}
         </h1>
         <h2
           class="text-secondary-color-light text-weight-regular text-h6 q-my-md"
           :class="$q.screen.gt.sm ? '' : 'text-center'"
         >
-          Sou um desenvolvedor web e aqui você pode conhecer um pouco mais sobre mim e ver alguns
-          dos meus projetos.
+          {{ t('pages.heroSection.subtitle') }}
         </h2>
         <div :class="$q.screen.gt.sm ? '' : 'text-center'">
           <q-btn

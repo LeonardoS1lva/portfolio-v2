@@ -1,4 +1,8 @@
 <script setup>
+import { useI18n } from 'vue-i18n'
+
+const { t } = useI18n()
+
 defineProps({
   showContact: {
     type: Boolean,
@@ -14,7 +18,7 @@ defineProps({
       <div class="col-11">
         <div class="row justify-between q-col-gutter-md">
           <div class="q-col-gutter-y-sm">
-            <h5 class="text-bold">Contato</h5>
+            <h5 class="text-bold">{{ t('common.contact') }}</h5>
             <div>
               <q-icon name="email" class="text-third-color" size="sm" />
               <q-btn
@@ -27,41 +31,41 @@ defineProps({
           </div>
 
           <div class="q-col-gutter-y-sm">
-            <h5 class="text-bold">Links Rápidos</h5>
+            <h5 class="text-bold">{{ t('common.quickLinks') }}</h5>
             <nav class="row column">
               <q-btn
                 flat
                 class="text-third-color q-pl-none"
                 to="#home"
-                label="Início"
+                :label="t('common.home')"
                 align="left"
               />
               <q-btn
                 flat
                 class="text-third-color q-pl-none"
                 to="#projects"
-                label="Projetos"
+                :label="t('common.projects')"
                 align="left"
               />
               <q-btn
                 flat
                 class="text-third-color q-pl-none"
                 to="#skills"
-                label="Habilidades"
+                :label="t('common.skills')"
                 align="left"
               />
               <q-btn
                 flat
                 class="text-third-color q-pl-none"
                 to="#contact"
-                label="Contato"
+                :label="t('common.contact')"
                 align="left"
               />
             </nav>
           </div>
 
           <div class="q-col-gutter-y-sm">
-            <h5 class="text-bold">Redes Sociais</h5>
+            <h5 class="text-bold">{{ t('common.socialMedia') }}</h5>
             <nav class="row column">
               <q-btn
                 flat
@@ -91,7 +95,7 @@ defineProps({
     <q-separator class="q-my-md bg-third-color" v-if="showContact" />
 
     <div class="text-center">
-      <p>&copy; 2025 Leonardo Silva. Todos os direitos reservados.</p>
+      <p>&copy; 2025 Leonardo Silva. {{ t('pages.footer.rights') }}</p>
     </div>
   </q-footer>
 </template>

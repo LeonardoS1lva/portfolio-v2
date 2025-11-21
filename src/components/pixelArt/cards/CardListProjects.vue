@@ -1,6 +1,9 @@
 <script setup>
-import defaultImg from 'src/assets/projects/PlaceholderImg.png'
 import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+import defaultImg from 'src/assets/projects/PlaceholderImg.png'
+
+const { t } = useI18n()
 
 const props = defineProps({
   imgProject: {
@@ -55,25 +58,25 @@ const getStatus = computed(() => {
   switch (props.status) {
     case 1:
       return {
-        status: 'Em progresso',
+        status: t('common.progress'),
         backgroundColor: 'is-warning',
         textColor: 'white',
       }
     case 2:
       return {
-        status: 'Concluído',
+        status: t('common.completed'),
         backgroundColor: 'is-success',
         textColor: 'white',
       }
     case 3:
       return {
-        status: 'Pausado',
+        status: t('common.paused'),
         backgroundColor: 'is-error',
         textColor: 'white',
       }
     default:
       return {
-        status: 'Desconhecido',
+        status: t('common.unknown'),
         backgroundColor: 'grey-3',
         textColor: 'white',
       }
@@ -124,7 +127,7 @@ const getStatus = computed(() => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <span class="text-black">Ver Código</span>
+        <span class="text-black">{{ t('common.viewCode') }}</span>
       </a>
       <a
         v-if="hasLinkProject"
@@ -133,7 +136,7 @@ const getStatus = computed(() => {
         target="_blank"
         rel="noopener noreferrer"
       >
-        <span class="text-black">Ver Projeto</span>
+        <span class="text-black">{{ t('common.viewProject') }}</span>
       </a>
     </q-card-actions>
   </q-card>

@@ -1,7 +1,9 @@
 <script setup>
+import { useI18n } from 'vue-i18n'
 import { useTheme } from 'src/composables/useTheme.js'
 
 const { changeTheme, themeOptions } = useTheme()
+const { t } = useI18n()
 
 defineProps({
   showLinks: {
@@ -28,25 +30,31 @@ defineProps({
         <q-toolbar v-if="showLinks" class="gt-sm">
           <q-space />
           <nav>
-            <q-btn flat color="third-color" label="Início" class="q-mr-sm text-bold" to="#home" />
             <q-btn
               flat
               color="third-color"
-              label="Projetos"
+              :label="t('common.home')"
+              class="q-mr-sm text-bold"
+              to="#home"
+            />
+            <q-btn
+              flat
+              color="third-color"
+              :label="t('common.projects')"
               class="q-mr-sm text-bold"
               to="#projects"
             />
             <q-btn
               flat
               color="third-color"
-              label="Habilidades"
+              :label="t('common.skills')"
               class="q-mr-sm text-bold"
               to="#skills"
             />
             <q-btn
               flat
               color="third-color"
-              label="Contato"
+              :label="t('common.contact')"
               class="q-mr-sm text-bold"
               to="#contact"
             />
@@ -85,17 +93,38 @@ defineProps({
       <div class="row">
         <q-space />
         <nav class="col-10 q-py-sm row justify-between">
-          <q-btn flat dense color="third-color" class="text-bold" label="Início" to="#home" />
-          <q-btn flat dense color="third-color" class="text-bold" label="Projetos" to="#projects" />
           <q-btn
             flat
             dense
             color="third-color"
             class="text-bold"
-            label="Habilidades"
+            :label="t('common.home')"
+            to="#home"
+          />
+          <q-btn
+            flat
+            dense
+            color="third-color"
+            class="text-bold"
+            :label="t('common.projects')"
+            to="#projects"
+          />
+          <q-btn
+            flat
+            dense
+            color="third-color"
+            class="text-bold"
+            :label="t('common.skills')"
             to="#skills"
           />
-          <q-btn flat dense color="third-color" class="text-bold" label="Contato" to="#contact" />
+          <q-btn
+            flat
+            dense
+            color="third-color"
+            class="text-bold"
+            :label="t('common.contact')"
+            to="#contact"
+          />
         </nav>
         <q-space />
       </div>

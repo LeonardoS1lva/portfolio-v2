@@ -1,5 +1,8 @@
 <script setup>
+import { useI18n } from 'vue-i18n'
 import logoPixel from 'src/assets/backgrounds/logo_holograma_pixel.png'
+
+const { t } = useI18n()
 </script>
 
 <template>
@@ -7,11 +10,10 @@ import logoPixel from 'src/assets/backgrounds/logo_holograma_pixel.png'
     <q-card class="col-md-6 col-sm-12 flex items-center bg-background-card" flat>
       <div class="q-pa-md">
         <h1 class="text-secondary-color text-bold text-h3" style="line-height: 1.2">
-          Olá, me chamo Leonardo Silva
+          {{ t('pages.heroSection.title') }}
         </h1>
         <h2 class="text-secondary-color-light text-weight-regular text-h6 q-py-md">
-          Sou um desenvolvedor web e aqui você pode conhecer um pouco mais sobre mim e ver alguns
-          dos meus projetos.
+          {{ t('pages.heroSection.subtitle') }}
         </h2>
         <div>
           <span>

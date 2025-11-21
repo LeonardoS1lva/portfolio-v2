@@ -1,6 +1,7 @@
 <script setup>
-import CardTechs from 'src/components/default/cards/CardTechs.vue'
 import { computed } from 'vue'
+import { useI18n } from 'vue-i18n'
+import CardTechs from 'src/components/default/cards/CardTechs.vue'
 
 import vueLogo from 'src/assets/icons/pixel-art/tecnologies/vue_pxArt.png'
 import quasarLogo from 'src/assets/icons/pixel-art/tecnologies/quasar_pxArt.png'
@@ -19,6 +20,8 @@ import postmanLogo from 'src/assets/icons/pixel-art/tecnologies/postman_pxArt.pn
 import vscodeLogo from 'src/assets/icons/pixel-art/tecnologies/vscode_pxArt.png'
 import pwaLogo from 'src/assets/icons/pixel-art/tecnologies/pwa_pxArt.png'
 import viteLogo from 'src/assets/icons/pixel-art/tecnologies/vite_pxArt.png'
+
+const { t } = useI18n()
 
 const mySkills = computed(() => [
   {
@@ -113,13 +116,12 @@ const mySkills = computed(() => [
   <div class="row">
     <q-card class="col-12 bg-background-card" flat>
       <q-card-section class="q-pa-md text-center">
-        <h3 class="text-secondary-color text-bold text-h4">Tecnologias e Ferramentas</h3>
+        <h3 class="text-secondary-color text-bold text-h4">{{ t('pages.mySkills.title') }}</h3>
         <div class="row">
           <q-space />
           <div class="col-md-6 col-12">
             <p class="text-h6 text-weight-regular text-secondary-color-light q-mt-md">
-              Aqui estão algumas das tecnologias e ferramentas que utilizo no meu dia a dia ou que
-              já tive algum contato.
+              {{ t('pages.mySkills.description') }}
             </p>
           </div>
           <q-space />
