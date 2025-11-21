@@ -27,4 +27,15 @@ export default {
     title: 'Lista de Projetos',
     subtitle: 'Aqui estão alguns dos meus projetos mais recentes.',
   },
+
+  errorNotFound: {
+    text: 'Ops! A página que você está procurando não foi encontrada.',
+    button: 'Página Inicial',
+  },
+
+  sentEmail: {
+    title: 'Email Enviado!',
+    description: 'Obrigado por entrar em contato! Sua mensagem foi enviada com sucesso.',
+    backHome: 'Voltar para o Início',
+  },
 }

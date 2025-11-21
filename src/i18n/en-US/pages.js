@@ -27,4 +27,15 @@ export default {
     title: 'Project List',
     subtitle: 'Here are some of my most recent projects.',
   },
+
+  errorNotFound: {
+    text: "Oops! The page you're looking for was not found.",
+    button: 'Home Page',
+  },
+
+  sentEmail: {
+    title: 'Email Sent!',
+    description: 'Thank you for getting in touch! Your message has been sent successfully.',
+    backHome: 'Back to Home',
+  },
 }
