@@ -11,26 +11,39 @@ import { useThemeStore } from 'src/stores/themeStore'
 const useTheme = useThemeStore()
 const { t } = useI18n()
 
-const filters = [t('common.all'), 'Vue/Quasar', 'HTML/CSS', 'Javascript', t('common.others')]
-const activeFilter = ref(t('common.all'))
+const filterMap = {
+  all: () => t('common.all'),
+  vueQuasar: () => 'Vue/Quasar',
+  htmlCss: () => 'HTML/CSS',
+  javascript: () => 'Javascript',
+  others: () => t('common.others'),
+}
+
+const filters = computed(() => Object.keys(filterMap).map((key) => filterMap[key]()))
+const activeFilterKey = ref('all')
+const activeFilterLabel = computed(() => filterMap[activeFilterKey.value]())
+
+function onFilterChange(label) {
+  const foundKey = Object.keys(filterMap).find((key) => filterMap[key]() === label)
+  if (foundKey) activeFilterKey.value = foundKey
+}
 
 const filteredItems = computed(() => {
-  if (activeFilter.value === t('common.all')) {
-    return projects
-  } else if (activeFilter.value === 'Vue/Quasar') {
-    return projects.filter(
-      (project) => project.stacks.includes('Vue') || project.stacks.includes('Quasar'),
-    )
-  } else if (activeFilter.value === 'HTML/CSS') {
-    return projects.filter(
-      (project) => project.stacks.includes('HTML') || project.stacks.includes('CSS'),
-    )
-  } else if (activeFilter.value === 'Javascript') {
-    return projects.filter((project) => project.stacks.includes('JavaScript'))
+  switch (activeFilterKey.value) {
+    case 'all':
+      return projects
+    case 'vueQuasar':
+      return projects.filter((p) => p.stacks.includes('Vue') || p.stacks.includes('Quasar'))
+    case 'htmlCss':
+      return projects.filter((p) => p.stacks.includes('HTML') || p.stacks.includes('CSS'))
+    case 'javascript':
+      return projects.filter((p) => p.stacks.includes('JavaScript'))
+    case 'others':
+    default:
+      return projects.filter((p) =>
+        p.stacks.some((s) => !['Vue', 'Quasar', 'HTML', 'CSS', 'JavaScript'].includes(s)),
+      )
   }
-  return projects.filter((project) =>
-    project.stacks.some((stack) => !['Vue', 'Quasar', 'HTML', 'CSS', 'JavaScript'].includes(stack)),
-  )
 })
 </script>
 
@@ -46,14 +59,14 @@ const filteredItems = computed(() => {
       <FilterDefault
         v-if="useTheme.theme !== 'pixel-art'"
         :filters="filters"
-        :activeFilter="activeFilter"
-        @update:activeFilter="(value) => (activeFilter = value)"
+        :activeFilter="activeFilterLabel"
+        @update:activeFilter="onFilterChange"
       />
       <FilterPixel
         v-else
         :filters="filters"
-        :activeFilter="activeFilter"
-        @update:activeFilter="(value) => (activeFilter = value)"
+        :activeFilter="activeFilterLabel"
+        @update:activeFilter="onFilterChange"
       />
 
       <div class="q-pt-md q-pb-lg row q-col-gutter-md">
