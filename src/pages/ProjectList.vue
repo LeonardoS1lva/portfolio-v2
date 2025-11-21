@@ -1,5 +1,7 @@
 <script setup>
 import { computed, ref } from 'vue'
+import FilterDefault from 'src/components/default/filters/FilterProjects.vue'
+import FilterPixel from 'src/components/pixelArt/filters/FilterProjects.vue'
 import CardListProjects from 'src/components/default/cards/CardListProjects.vue'
 import CardListProjectsPixel from 'src/components/pixelArt/cards/CardListProjects.vue'
 import projects from 'src/utils/allProjects'
@@ -39,18 +41,18 @@ const filteredItems = computed(() => {
         Aqui estão alguns dos meus projetos mais recentes.
       </h2>
 
-      <div class="q-py-md row q-gutter-md">
-        <q-btn
-          v-for="filter in filters"
-          :key="filter"
-          :label="filter"
-          :color="activeFilter === filter ? 'primary-color' : 'grey-6'"
-          text-color="third-color"
-          outlined
-          rounded
-          @click="activeFilter = filter"
-        />
-      </div>
+      <FilterDefault
+        v-if="useTheme.theme !== 'pixel-art'"
+        :filters="filters"
+        :activeFilter="activeFilter"
+        @update:activeFilter="(value) => (activeFilter = value)"
+      />
+      <FilterPixel
+        v-else
+        :filters="filters"
+        :activeFilter="activeFilter"
+        @update:activeFilter="(value) => (activeFilter = value)"
+      />
 
       <div class="q-pt-md q-pb-lg row q-col-gutter-md">
         <div
