@@ -22,8 +22,8 @@ export default [
     projectDescription: 'projects.plataformaCpid.description',
     projectLink: 'https://plataformacpid.com.br/',
     hasLinkCode: false,
-    status: 1,
-    stacks: ['Vue', 'Quasar', 'Python', 'MySQL'],
+    status: 2,
+    stacks: ['Vue', 'Quasar', 'Python', 'MySQL', 'Docker', 'FastAPI'],
   },
   {
     imgProject: imgProjetoRodaDaVida,
@@ -42,8 +42,8 @@ export default [
     projectDescription: 'projects.redeBeijaFlor.description',
     projectLink: 'https://app1.arandu.org.br/',
     hasLinkCode: false,
-    status: 1,
-    stacks: ['Vue', 'Quasar'],
+    status: 2,
+    stacks: ['Vue', 'Quasar', 'Python', 'FastAPI'],
   },
   {
     imgProject: imgJogoDaMemoria,
